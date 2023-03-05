@@ -34,28 +34,11 @@ ol {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  animation-name: mode;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
   top: 10%;
-  left: 33%;
+  left: 20%;
   z-index: 1;
 }
 
-@keyframes mode {
-  0% {
-    top: 10%;
-    left: 33%;
-  }
-  50% {
-    top: 10%;
-    left: 61%;
-  }
-  100% {
-    top: 10%;
-    left: 33%;
-  }
-}
 
 .mode2 {
   position: absolute;
@@ -71,12 +54,8 @@ ol {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  animation-name: mode;
-  animation-duration: 5s;
-  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation-iteration-count: infinite;
   top: 10%;
-  left: 33%; z-index: 1;
+  left: 20%; z-index: 1;
 }
 
 @keyframes body {
