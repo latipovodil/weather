@@ -291,7 +291,7 @@ export default function Hero({ mode }: Props) {
   const searchSubmit = (e: any) => {
     e.preventDefault();
     const str = e.target[0].value;
-    const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=39a7ea7b22b64f65bdd114722230303&q=${str}&days=7`;
+    const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=ca439d1a8a2c4c4280783927230503&q=${str}&days=7`;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
