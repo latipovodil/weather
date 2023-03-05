@@ -37,9 +37,9 @@ ol {
   animation-name: mode;
   animation-duration: 5s;
   animation-iteration-count: infinite;
-  z-index: 2;
   top: 10%;
   left: 33%;
+  z-index: 1;
 }
 
 @keyframes mode {
@@ -76,8 +76,7 @@ ol {
   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   animation-iteration-count: infinite;
   top: 10%;
-  left: 33%;
-  z-index: 2;
+  left: 33%; z-index: 1;
 }
 
 @keyframes body {
@@ -133,6 +132,7 @@ img {
   height: 100vh;
   background-color: transparent;
   backdrop-filter: blur(10px);
+  z-index: 2;
 }
 
 .hero__title {

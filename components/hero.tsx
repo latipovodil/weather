@@ -158,7 +158,7 @@ export default function Hero({ mode }: Props) {
   const [location, setLocation] = useState<Location>({
     latitude: null,
     longitude: null,
-    error: null,
+    error: null, 
   });
   const [weather, setWeather] = useState<Weather | null>(null);
   const [errorSuccess, setErrorSuccess] = React.useState<ErrorSuccess>({
@@ -194,7 +194,9 @@ export default function Hero({ mode }: Props) {
 
   useEffect(() => {
     if (location.latitude && location.longitude) {
-      const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=39a7ea7b22b64f65bdd114722230303&q=${location.latitude},${location.longitude}&days=7`;
+      // https://api.weatherapi.com/v1/forecast.json?key=ca439d1a8a2c4c4280783927230503&q=${location.latitude},${location.longitude}&days=7 
+
+      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=ca439d1a8a2c4c4280783927230503&q=${location.latitude},${location.longitude}&days=7`;
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => setWeather(data));
