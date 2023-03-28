@@ -194,9 +194,9 @@ export default function Hero({ mode }: Props) {
 
   useEffect(() => {
     if (location.latitude && location.longitude) {
-      // https://api.weatherapi.com/v1/forecast.json?key=ca439d1a8a2c4c4280783927230503&q=${location.latitude},${location.longitude}&days=7 
+      // https://api.weatherapi.com/v1/forecast.json?key=caf4991198194c19b6f42604232803&q=${location.latitude},${location.longitude}&days=7 
 
-      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=ca439d1a8a2c4c4280783927230503&q=${location.latitude},${location.longitude}&days=7`;
+      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=caf4991198194c19b6f42604232803&q=${location.latitude},${location.longitude}&days=7`;
       fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => setWeather(data));
@@ -291,7 +291,7 @@ export default function Hero({ mode }: Props) {
   const searchSubmit = (e: any) => {
     e.preventDefault();
     const str = e.target[0].value;
-    const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=ca439d1a8a2c4c4280783927230503&q=${str}&days=7`;
+    const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=caf4991198194c19b6f42604232803&q=${str}&days=7`;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
