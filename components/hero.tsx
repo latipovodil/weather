@@ -196,10 +196,11 @@ export default function Hero({ mode }: Props) {
     if (location.latitude && location.longitude) {
       // https://api.weatherapi.com/v1/forecast.json?key=caf4991198194c19b6f42604232803&q=${location.latitude},${location.longitude}&days=7 
 
-      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=caf4991198194c19b6f42604232803&q=${location.latitude},${location.longitude}&days=7`;
+      const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=caf4991198194c19b6f42604232803&q=${location.latitude},${location.longitude}&days=30`;
       fetch(apiUrl)
         .then((response) => response.json())
-        .then((data) => setWeather(data));
+        .then((data) => {console.log(data);
+         setWeather(data)});
     }
   }, [location]);
 
@@ -376,11 +377,11 @@ export default function Hero({ mode }: Props) {
         {weather ? (
           <div className="hero__main">
             {errorSuccess.data ? (
-              <div className="success">
+              <div style={mode ? {zIndex:"7",backgroundColor:"#fff"}:{zIndex:"5"}} className="success">
                 <h3>{errorSuccess.text}</h3>
               </div>
             ) : errorSuccess.data === false ? (
-              <div className="error">
+              <div style={mode ? {zIndex:"5",backgroundColor:"#fff"}:{zIndex:"5"}} className="error">
                 {" "}
                 <h3>{errorSuccess.text}</h3>
               </div>
@@ -498,7 +499,7 @@ export default function Hero({ mode }: Props) {
                   {getWeek(weather?.forecast?.forecastday[2].date).dayOfWeek}
                 </p>
               </li>
-              <li className="hero__weeks">
+              {/* <li className="hero__weeks">
                 <h3 className="hero__week-title">
                   {Math.round(
                     findAverageOfMaxAndMin(
@@ -585,7 +586,7 @@ export default function Hero({ mode }: Props) {
                 <p>
                   {getWeek(weather?.forecast?.forecastday[6].date).dayOfWeek}
                 </p>
-              </li>
+              </li> */}
             </ul>
             <div className={mode ? "hero__location2" : "hero__location"}>
               <div className="hero__locationSearch">
@@ -691,7 +692,7 @@ export default function Hero({ mode }: Props) {
                   {getWeek(weather?.forecast?.forecastday[2].date).dayOfWeek}
                 </span>
               </li>
-              <li>
+              {/* <li>
                 <p
                   style={{
                     height: `${
@@ -774,7 +775,7 @@ export default function Hero({ mode }: Props) {
                 <span>
                   {getWeek(weather?.forecast?.forecastday[6].date).dayOfWeek}
                 </span>
-              </li>
+              </li> */}
             </ul>
           </div>
         ) : (
